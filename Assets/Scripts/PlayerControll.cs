@@ -49,8 +49,8 @@ public class PlayerControll : MonoBehaviour
     // プレイヤー視点
     private void Look()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivityX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivityY;
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivityX * Time.deltaTime * 100;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivityY * Time.deltaTime * 100;
 
         // 上下回転
         targetXRot -= mouseY;
