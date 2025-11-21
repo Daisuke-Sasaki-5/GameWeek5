@@ -36,7 +36,7 @@ public class PlayerControll : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         // カーソルを非表示
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
@@ -49,8 +49,8 @@ public class PlayerControll : MonoBehaviour
     // プレイヤー視点
     private void Look()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivityX * Time.deltaTime * 100;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivityY * Time.deltaTime * 100;
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivityX * Time.deltaTime * 35;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivityY * Time.deltaTime * 35;
 
         // 上下回転
         targetXRot -= mouseY;

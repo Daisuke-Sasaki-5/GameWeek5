@@ -5,6 +5,7 @@ using TMPro;
 using NUnit.Framework.Interfaces;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -80,6 +81,10 @@ public class GameManager : MonoBehaviour
     {
         if (isStarted) return;
         isStarted = true;
+
+        // マウスロック
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         // ボタン・テキスト非表示
         starttext?.gameObject.SetActive(false);
